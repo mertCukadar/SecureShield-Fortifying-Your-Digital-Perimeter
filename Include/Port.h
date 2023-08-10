@@ -6,14 +6,11 @@
 #include <winsock2.h>
 #pragma comment(lib, "ws2_32.lib")
 
-#ifdef _WIN32
-
-bool wsInit(); 
-
-bool CloseSocket();
-
-#endif
+bool wsInit();
+bool CloseSocket(SOCKET sock);
+bool CreateSocket(SOCKET &sock, int type, int port);
+extern int Port;
 
 #endif
 
-#endif // PORT_H    
+#endif // PORT_H
