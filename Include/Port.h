@@ -10,6 +10,8 @@
 
 bool wsInit(); 
 
+bool CloseSocket();
+
 #endif
 
 #endif

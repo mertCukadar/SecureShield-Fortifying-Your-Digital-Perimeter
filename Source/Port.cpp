@@ -14,7 +14,16 @@ bool wsInit() {
     return true;
 }
 
-
+bool CreateSocket(SOCKET &sock, int type) {
+    sock = socket(AF_INET, type, 0);
+    if (sock == INVALID_SOCKET) {
+        std::cerr << "Create socket failed.\n";
+        return false;
+    }
+    closesocket(sock);
+    WSACleanup();
+    return true;
+}
 
 
 
